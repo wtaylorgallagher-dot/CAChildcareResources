@@ -4,16 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>California Child Care Provider Resource Library | Licensing, Training, Health & Safety</title>
+<title>California Child Care Provider Resource Library | CA Childcare Resources</title>
 
 <meta name="description" content="California child care provider resources for licensing, required training, forms, health and safety, lead prevention, immunizations, mandated reporting, nutrition, emergency preparedness and compliance.">
 
 <link rel="canonical" href="https://www.cachildcareresources.com/resources.html">
 
 <meta property="og:title" content="California Child Care Provider Resource Library | CA Childcare Resources">
-
-<meta property="og:description" content="California child care provider resources for licensing, required training, forms, health and safety, lead prevention, immunizations, nutrition and compliance.">
-
+<meta property="og:description" content="California child care licensing, training, forms, health and safety, lead prevention, immunization, nutrition and provider compliance resources.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.cachildcareresources.com/resources.html">
 
@@ -21,13 +19,245 @@
 
 <link rel="stylesheet" href="/assets/styles.css">
 
+<style>
+
+/* =========================================================
+   RESOURCE LIBRARY — PAGE-SPECIFIC STYLES
+   ========================================================= */
+
+.resource-library {
+  padding: 34px 0 64px;
+}
+
+/* Compact intro — replaces oversized hero */
+.resource-library-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 510px);
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 24px;
+}
+
+.resource-library-heading h1 {
+  font-size: clamp(2.25rem, 4vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin: 0 0 10px;
+  color: #17384a;
+}
+
+.resource-library-heading p {
+  margin: 0;
+  max-width: 720px;
+  color: #60747d;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+
+/* Search */
+.resource-search-panel {
+  width: 100%;
+}
+
+.resource-search {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d9e5e6;
+  border-radius: 12px;
+  padding: 0 16px;
+  min-height: 52px;
+  box-shadow: 0 4px 16px rgba(19, 55, 69, 0.05);
+}
+
+.resource-search svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  color: #668087;
+}
+
+.resource-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  color: #19313d;
+  font-size: 0.96rem;
+}
+
+.resource-search input::placeholder {
+  color: #8a999e;
+}
+
+.resource-count {
+  display: block;
+  margin-top: 7px;
+  font-size: 0.74rem;
+  color: #8a999e;
+}
+
+
+/* Resource grid */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+
+/* Entire card is clickable */
+.resource-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #dfe8e9;
+  border-radius: 13px;
+  padding: 19px 38px 15px 19px;
+  min-height: 154px;
+  box-shadow: 0 3px 12px rgba(18, 52, 65, 0.035);
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  border-color: #9fcac5;
+  box-shadow: 0 9px 24px rgba(18, 52, 65, 0.08);
+}
+
+/* Small professional arrow */
+.resource-card::after {
+  content: "↗";
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  font-size: 1rem;
+  color: #0d817a;
+  opacity: 0.7;
+  transition: transform 0.16s ease;
+}
+
+.resource-card:hover::after {
+  transform: translate(2px, -2px);
+}
+
+
+/* Clickable resource title */
+.resource-card h2 {
+  margin: 0 0 8px;
+  padding-right: 4px;
+  color: #17384a;
+  font-family: inherit;
+  font-size: 1.04rem;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  font-weight: 800;
+}
+
+.resource-card:hover h2 {
+  color: #08786f;
+}
+
+
+/* Description */
+.resource-card p {
+  margin: 0;
+  color: #60727a;
+  font-size: 0.87rem;
+  line-height: 1.46;
+}
+
+
+/* Very subtle source attribution */
+.resource-source {
+  display: block;
+  margin-top: auto;
+  padding-top: 12px;
+  color: #9aa5a8;
+  font-size: 0.66rem;
+  line-height: 1.25;
+}
+
+
+/* Special note, such as access code */
+.resource-note {
+  display: block;
+  margin-top: 9px;
+  color: #526870;
+  font-size: 0.76rem;
+}
+
+.resource-card[hidden] {
+  display: none !important;
+}
+
+
+/* Bottom disclaimer */
+.library-disclaimer {
+  max-width: 880px;
+  margin: 30px 0 0;
+  color: #839298;
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+
+
+/* Responsive */
+@media (max-width: 980px) {
+
+  .resource-library-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .resource-library {
+    padding-top: 24px;
+  }
+
+  .resource-library-heading h1 {
+    font-size: 2.15rem;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-card {
+    min-height: auto;
+  }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
+
 <a class="skip" href="#main">Skip to content</a>
 
+
 <header class="site-header">
+
   <div class="container nav">
 
     <a class="brand" href="/">
@@ -35,12 +265,18 @@
       <span>CA Childcare Resources</span>
     </a>
 
-    <button class="mobile-toggle" aria-label="Open navigation">☰</button>
+    <button class="mobile-toggle" aria-label="Open navigation">
+      ☰
+    </button>
 
     <nav class="nav-links" aria-label="Main navigation">
+
       <a href="/start-here.html">Start Here</a>
+
       <a href="/resources.html">Resource Library</a>
+
       <a href="/training.html">Required Training</a>
+
       <a href="/articles/">Guides</a>
 
       <a
@@ -50,1372 +286,1093 @@
         rel="noopener">
         Book Training
       </a>
+
     </nav>
 
   </div>
+
 </header>
+
 
 
 <main id="main">
 
 
-<section class="page-hero">
-
-  <div class="container">
-
-    <div class="breadcrumbs">
-      <a href="/">Home</a> / Resource Library
-    </div>
-
-    <div class="eyebrow">
-      CALIFORNIA CHILD CARE PROVIDER RESOURCES
-    </div>
-
-    <h1>Child Care Provider Resource Library</h1>
-
-    <p class="hero-copy">
-      Licensing, training, health and safety, forms, reporting requirements,
-      lead prevention, immunizations, nutrition, emergency preparedness,
-      accreditation resources, and official California provider guidance.
-    </p>
-
-  </div>
-
-</section>
-
-
-
-<section>
+<section class="resource-library">
 
 <div class="container">
 
 
-<div class="resources-toolbar">
+<!-- ======================================================
+     COMPACT INTRO + SEARCH
+     ====================================================== -->
 
-  <span aria-hidden="true">⌕</span>
+<div class="resource-library-heading">
 
-  <input
-    id="resourceSearch"
-    type="search"
-    placeholder="Search resources: lead, immunization, forms, mandated reporter, CACFP…"
-    aria-label="Search resources">
+  <div>
+
+    <h1>Resource Library</h1>
+
+    <p>
+      California child care licensing, training, forms, health and safety,
+      nutrition, reporting, lead prevention and provider resources.
+      Search below or browse the complete library.
+    </p>
+
+  </div>
+
+
+  <div class="resource-search-panel">
+
+    <label class="resource-search">
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true">
+
+        <circle cx="11" cy="11" r="8"></circle>
+
+        <path d="m21 21-4.35-4.35"></path>
+
+      </svg>
+
+      <input
+        id="resourceSearch"
+        type="search"
+        placeholder="Search lead, forms, CPR, CACFP, immunization…"
+        aria-label="Search child care resources">
+
+    </label>
+
+    <span class="resource-count" id="resourceCount">
+      Browse all resources
+    </span>
+
+  </div>
 
 </div>
 
 
 
-<div class="chips">
+<!-- ======================================================
+     RESOURCE GRID
+     ====================================================== -->
 
-  <button class="chip active" data-filter="all">All Resources</button>
-
-  <button class="chip" data-filter="licensing">Licensing</button>
-
-  <button class="chip" data-filter="training">Training</button>
-
-  <button class="chip" data-filter="forms">Forms</button>
-
-  <button class="chip" data-filter="regulations">Regulations</button>
-
-  <button class="chip" data-filter="background">Background Checks</button>
-
-  <button class="chip" data-filter="health">Health & Safety</button>
-
-  <button class="chip" data-filter="illness">Illness & Immunization</button>
-
-  <button class="chip" data-filter="reporting">Reporting</button>
-
-  <button class="chip" data-filter="lead">Lead</button>
-
-  <button class="chip" data-filter="nutrition">Nutrition</button>
-
-  <button class="chip" data-filter="quality">Quality & Accreditation</button>
-
-  <button class="chip" data-filter="infant">Infant Safety</button>
-
-  <button class="chip" data-filter="emergency">Emergency Preparedness</button>
-
-  <button class="chip" data-filter="updates">Updates</button>
-
-  <button class="chip" data-filter="support">Provider Support</button>
-
-</div>
-
-
-
-<div class="resource-grid">
+<div class="resource-grid" id="resourceGrid">
 
 
 
 <!-- LICENSING -->
 
-<article class="card resource-card"
-data-category="licensing"
-data-search="How to Become Licensed California childcare child care license application family child care home center CDSS Community Care Licensing">
-
-<span class="tag">Licensing</span>
-
-<h3>How to Become Licensed</h3>
-
-<p>
-Official California guidance for beginning the child care licensing process,
-including Family Child Care Homes and Child Care Centers.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/child-care-licensing/how-to-become-licensed"
 target="_blank"
-rel="noopener">
-Open resource →
+rel="noopener"
+data-search="How to Become Licensed California child care licensing license application family child care home child care center CDSS CCLD">
+
+<h2>How to Become Licensed</h2>
+
+<p>
+Official California guidance for beginning the licensing process for
+Family Child Care Homes and Child Care Centers.
+</p>
+
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="licensing"
-data-search="Child Care Licensing Orientation orientation prospective licensees California CCLD">
-
-<span class="tag">Licensing</span>
-
-<h3>Child Care Licensing Orientations</h3>
-
-<p>
-Orientation information for prospective California child care licensees.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/child-care-licensing/how-to-become-licensed/orientations"
 target="_blank"
-rel="noopener">
-Open resource →
-</a>
+rel="noopener"
+data-search="Child Care Licensing Orientations California CCLD orientation license">
+
+<h2>Child Care Licensing Orientations</h2>
+
+<p>
+Orientation requirements and information for prospective California
+child care licensees.
 </p>
 
-<div class="source">
-Source: California Department of Social Services
-</div>
+<span class="resource-source">
+California Department of Social Services
+</span>
 
-</article>
+</a>
+
+
+
+<a
+class="resource-card"
+href="/articles/california-childcare-licensing-checklist.html"
+data-search="California Child Care Licensing Checklist new provider licensing steps orientation application training clearances inspection">
+
+<h2>California Child Care Licensing Checklist</h2>
+
+<p>
+A step-by-step overview of orientation, training, background clearances,
+applications and facility preparation.
+</p>
+
+<span class="resource-source">
+CA Childcare Resources
+</span>
+
+</a>
 
 
 
 <!-- FORMS -->
 
-<article class="card resource-card"
-data-category="forms"
-data-search="California childcare licensing forms LIC forms applications CDSS">
-
-<span class="tag">Forms</span>
-
-<h3>California Licensing Forms</h3>
-
-<p>
-Search the current California licensing forms library for applications,
-facility records, reports, plans and required documentation.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/forms-brochures/forms-alphabetically"
 target="_blank"
-rel="noopener">
-Search forms →
+rel="noopener"
+data-search="California Licensing Forms LIC forms childcare child care applications CDSS">
+
+<h2>California Licensing Forms</h2>
+
+<p>
+Search California's current forms library for licensing applications,
+records, reports and required documentation.
+</p>
+
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="forms"
-data-search="LIC 624 unusual incident report child care center unusual injury California">
-
-<span class="tag">Forms</span>
-
-<h3>LIC 624 — Unusual Incident / Injury Report</h3>
-
-<p>
-California reporting form for unusual incidents or injuries involving a
-licensed Child Care Center.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/cdssweb/entres/forms/English/LIC624.PDF"
 target="_blank"
-rel="noopener">
-Open LIC 624 →
+rel="noopener"
+data-search="LIC 624 unusual incident injury report child care center">
+
+<h2>LIC 624 — Unusual Incident / Injury Report</h2>
+
+<p>
+Incident and injury reporting form for licensed California
+Child Care Centers.
+</p>
+
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="forms"
-data-search="LIC 624B unusual incident report family child care home daycare California">
-
-<span class="tag">Forms</span>
-
-<h3>LIC 624B — Unusual Incident / Injury Report</h3>
-
-<p>
-California unusual incident or injury reporting form for Family Child Care Homes.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/cdssweb/entres/forms/English/LIC624B.PDF"
 target="_blank"
-rel="noopener">
-Open LIC 624B →
-</a>
+rel="noopener"
+data-search="LIC 624B unusual incident injury report family child care home daycare">
+
+<h2>LIC 624B — Family Child Care Incident Report</h2>
+
+<p>
+Unusual incident and injury reporting form for California
+Family Child Care Homes.
 </p>
 
-<div class="source">
-Source: California Department of Social Services
-</div>
+<span class="resource-source">
+California Department of Social Services
+</span>
 
-</article>
+</a>
 
 
 
 <!-- REGULATIONS -->
 
-<article class="card resource-card"
-data-category="regulations"
-data-search="Title 22 childcare laws regulations family child care home center California">
-
-<span class="tag">Regulations</span>
-
-<h3>Title 22 & Child Care Regulations</h3>
-
-<p>
-Official laws and regulations governing California Family Child Care Homes
-and Child Care Centers.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/child-care-licensing/resources-for-providers/laws-and-regulations"
 target="_blank"
-rel="noopener">
-View regulations →
-</a>
+rel="noopener"
+data-search="Title 22 child care laws regulations family child care home center California">
+
+<h2>Title 22 & Child Care Regulations</h2>
+
+<p>
+Official laws and regulations governing California Family Child Care
+Homes and Child Care Centers.
 </p>
 
-<div class="source">
-Source: CDSS / Community Care Licensing
-</div>
+<span class="resource-source">
+CDSS / Community Care Licensing
+</span>
 
-</article>
+</a>
 
 
 
 <!-- TRAINING -->
 
-<article class="card resource-card"
-data-category="training"
-data-search="EMSA child care provider training preventive health CPR first aid California approved">
+<a
+class="resource-card"
+href="/training.html"
+data-search="California child care required training preventive health CPR first aid mandated reporter nutrition lead requirements">
 
-<span class="tag">Training</span>
-
-<h3>EMSA Child Care Provider Training</h3>
+<h2>California Child Care Training Requirements</h2>
 
 <p>
-Official California EMSA information regarding approved child care
-Preventive Health, CPR and First Aid training programs.
+Overview of Preventive Health & Safety, Pediatric CPR and First Aid,
+Mandated Reporter Training and related requirements.
 </p>
 
-<p>
-<a class="more"
+<span class="resource-source">
+CA Childcare Resources
+</span>
+
+</a>
+
+
+
+<a
+class="resource-card"
 href="https://emsa.ca.gov/childcare_provider/"
 target="_blank"
-rel="noopener">
-View EMSA requirements →
-</a>
+rel="noopener"
+data-search="EMSA child care provider training preventive health CPR first aid California approved">
+
+<h2>EMSA Child Care Provider Training</h2>
+
+<p>
+Official California EMSA information for approved Preventive Health,
+Pediatric CPR and First Aid training.
 </p>
 
-<div class="source">
-Source: California EMSA
-</div>
+<span class="resource-source">
+California EMSA
+</span>
 
-</article>
+</a>
 
 
 
-<article class="card resource-card"
-data-category="training"
-data-search="Acute Preventive Health CA EMSA preventive health nutrition lead Zoom certificate California">
+<a
+class="resource-card"
+href="https://www.cdss.ca.gov/inforesources/cdss-programs/community-care-licensing/child-care-licensing/resources-for-providers/training-and-educational-resources"
+target="_blank"
+rel="noopener"
+data-search="CDSS training educational resources child care providers mandated reporter California">
 
-<span class="tag">Training</span>
+<h2>CDSS Training & Educational Resources</h2>
 
-<h3>Preventive Health & Safety — Acute Preventive Health</h3>
+<p>
+Official training and educational resources for California child care
+licensees, applicants, staff and providers.
+</p>
+
+<span class="resource-source">
+California Department of Social Services
+</span>
+
+</a>
+
+
+
+<a
+class="resource-card"
+href="https://www.acutepreventivehealth.com/#book-your-class-now"
+target="_blank"
+rel="noopener"
+data-search="Acute Preventive Health CA EMSA preventive health nutrition lead Zoom training certificate">
+
+<h2>Preventive Health & Safety — Acute</h2>
 
 <p>
 Live online California Preventive Health & Safety training including
 Nutrition and Lead Poisoning Prevention.
 </p>
 
-<p>
-<a class="more"
-href="https://www.acutepreventivehealth.com/"
-target="_blank"
-rel="noopener">
-View training →
+<span class="resource-source">
+Acute Preventive Health
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: Acute Preventive Health
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="training"
-data-search="CA Preventive Health Safety EMSA nutrition lead poisoning prevention Zoom California childcare">
+<a
+class="resource-card"
+href="https://www.capreventivehealthandsafety.com/"
+target="_blank"
+rel="noopener"
+data-search="CA Preventive Health Safety EMSA nutrition lead poisoning prevention Zoom childcare">
 
-<span class="tag">Training</span>
-
-<h3>Preventive Health & Safety — CA Preventive</h3>
+<h2>Preventive Health & Safety — CA Preventive</h2>
 
 <p>
 Live online California EMSA-approved Preventive Health & Safety training
 including Nutrition and Lead Poisoning Prevention.
 </p>
 
-<p>
-<a class="more"
-href="https://www.capreventivehealthandsafety.com/"
-target="_blank"
-rel="noopener">
-View training →
+<span class="resource-source">
+CA Preventive Health & Safety
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: CA Preventive Health & Safety
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="training"
-data-search="free mandated reporter child care provider training California abuse neglect course">
+<a
+class="resource-card"
+href="https://mandatedreporterca.com/training/child-care-providers"
+target="_blank"
+rel="noopener"
+data-search="free mandated reporter training child care providers California abuse neglect">
 
-<span class="tag">Training</span>
-
-<h3>Free Mandated Reporter Training</h3>
+<h2>Free Mandated Reporter Training</h2>
 
 <p>
-Online mandated reporter training specifically developed for California
+Online mandated reporter training developed specifically for California
 child care providers.
 </p>
 
-<p>
-<a class="more"
-href="https://mandatedreporterca.com/training/child-care-providers"
-target="_blank"
-rel="noopener">
-Take the course →
+<span class="resource-source">
+California Mandated Reporter Training
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Mandated Reporter Training
-</div>
-
-</article>
 
 
 
-<!-- BACKGROUND -->
+<!-- BACKGROUND CHECKS -->
 
-<article class="card resource-card"
-data-category="background"
-data-search="Guardian background check Live Scan California child care clearance">
+<a
+class="resource-card"
+href="https://www.cdss.ca.gov/inforesources/community-care/caregiver-background-check/guardian"
+target="_blank"
+rel="noopener"
+data-search="Guardian background check Live Scan criminal record clearance childcare">
 
-<span class="tag">Background Checks</span>
-
-<h3>Guardian Background Check System</h3>
+<h2>Guardian Background Check System</h2>
 
 <p>
-California caregiver background-check and criminal-record clearance
+California criminal-record clearance and caregiver background-check
 information for licensed care providers.
 </p>
 
-<p>
-<a class="more"
-href="https://www.cdss.ca.gov/inforesources/community-care/caregiver-background-check/guardian"
-target="_blank"
-rel="noopener">
-Open Guardian information →
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
 <!-- HEALTH & SAFETY -->
 
-<article class="card resource-card"
-data-category="health"
-data-search="EPA disinfectant List N cleaning disinfecting child care sanitation">
+<a
+class="resource-card"
+href="https://www.epa.gov/pesticide-registration/list-n-disinfectants-coronavirus-covid-19"
+target="_blank"
+rel="noopener"
+data-search="EPA recommended disinfectants List N cleaning disinfecting sanitation childcare">
 
-<span class="tag">Health & Safety</span>
-
-<h3>EPA Recommended Disinfectants</h3>
+<h2>EPA Recommended Disinfectants</h2>
 
 <p>
-EPA List N provides disinfectant products that meet federal criteria
+EPA List N identifies disinfectant products that meet federal criteria
 for use against SARS-CoV-2.
 </p>
 
-<p>
-<a class="more"
-href="https://www.epa.gov/pesticide-registration/list-n-disinfectants-coronavirus-covid-19"
-target="_blank"
-rel="noopener">
-View EPA List N →
+<span class="resource-source">
+U.S. Environmental Protection Agency
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: U.S. Environmental Protection Agency
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="health"
-data-search="safer cleaning products EPA greener products disinfectant childcare cleaning">
+<a
+class="resource-card"
+href="https://www.epa.gov/greenerproducts/identifying-greener-cleaning-products"
+target="_blank"
+rel="noopener"
+data-search="EPA safer cleaning products greener cleaning products chemicals childcare">
 
-<span class="tag">Health & Safety</span>
-
-<h3>Identifying Safer Cleaning Products</h3>
+<h2>Identifying Safer Cleaning Products</h2>
 
 <p>
-EPA guidance for identifying cleaning products with safer chemical ingredients
+EPA guidance for identifying cleaning products with safer ingredients
 and recognized environmental certifications.
 </p>
 
-<p>
-<a class="more"
-href="https://www.epa.gov/greenerproducts/identifying-greener-cleaning-products"
-target="_blank"
-rel="noopener">
-View EPA guidance →
+<span class="resource-source">
+U.S. Environmental Protection Agency
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: U.S. Environmental Protection Agency
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="health"
-data-search="CPSC recalls child products cribs toys childcare recalls safety">
+<a
+class="resource-card"
+href="https://www.cpsc.gov/Recalls"
+target="_blank"
+rel="noopener"
+data-search="CPSC recalls children's products toys furniture cribs childcare safety">
 
-<span class="tag">Health & Safety</span>
-
-<h3>Consumer Product Safety Recalls</h3>
+<h2>Consumer Product Safety Recalls</h2>
 
 <p>
 Search current recalls involving children's products, toys, furniture,
-cribs and other consumer products used in child care environments.
+cribs and other products used in child care.
 </p>
 
-<p>
-<a class="more"
-href="https://www.cpsc.gov/Recalls"
-target="_blank"
-rel="noopener">
-Search recalls →
+<span class="resource-source">
+U.S. Consumer Product Safety Commission
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: U.S. Consumer Product Safety Commission
-</div>
-
-</article>
 
 
 
 <!-- ILLNESS & IMMUNIZATION -->
 
-<article class="card resource-card"
-data-category="illness"
-data-search="reportable communicable diseases conditions California CDPH childcare disease reporting">
-
-<span class="tag">Illness & Immunization</span>
-
-<h3>Reportable Communicable Diseases & Conditions</h3>
-
-<p>
-California information identifying diseases and conditions subject to
-public-health reporting requirements.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Reportable-Disease-and-Conditions.aspx"
 target="_blank"
-rel="noopener">
-View reportable conditions →
+rel="noopener"
+data-search="reportable communicable diseases conditions California CDPH childcare illness">
+
+<h2>Reportable Communicable Diseases & Conditions</h2>
+
+<p>
+California information identifying communicable diseases and conditions
+subject to public-health reporting.
+</p>
+
+<span class="resource-source">
+California Department of Public Health
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Public Health
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="illness"
-data-search="California immunization handbook childcare school vaccine requirements IMM 365">
-
-<span class="tag">Illness & Immunization</span>
-
-<h3>California Immunization Handbook</h3>
-
-<p>
-California guidance concerning immunization requirements and records
-for child care and school settings.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdph.ca.gov/Programs/CID/DCDC/CDPH%20Document%20Library/Immunization/IMM-365.pdf"
 target="_blank"
-rel="noopener">
-Open handbook →
-</a>
+rel="noopener"
+data-search="California immunization handbook childcare school vaccines IMM 365">
+
+<h2>California Immunization Handbook</h2>
+
+<p>
+Guidance concerning immunization requirements and recordkeeping for
+child care and school settings.
 </p>
 
-<div class="source">
-Source: California Department of Public Health
-</div>
+<span class="resource-source">
+California Department of Public Health
+</span>
 
-</article>
+</a>
 
 
 
-<article class="card resource-card"
-data-category="illness"
-data-search="vaccination toolkit early care education children vaccines up to date">
+<a
+class="resource-card"
+href="https://www.phf.org/resourcestools/Pages/How_Early_Care_and_Education_Can_Help_Children_Keep_Their_Vaccinations_Up-to-Date.aspx"
+target="_blank"
+rel="noopener"
+data-search="vaccination toolkit early care education children vaccines immunization">
 
-<span class="tag">Illness & Immunization</span>
-
-<h3>Vaccination Support Toolkit for Early Care & Education</h3>
+<h2>Vaccination Support Toolkit</h2>
 
 <p>
 Resources for early care and education programs supporting families
-in keeping children's vaccinations up to date.
+in keeping children's vaccinations current.
 </p>
 
-<p>
-<a class="more"
-href="https://www.phf.org/resourcestools/Pages/How_Early_Care_and_Education_Can_Help_Children_Keep_Their_Vaccinations_Up-to-Date.aspx"
-target="_blank"
-rel="noopener">
-Open toolkit →
+<span class="resource-source">
+Public Health Foundation
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: Public Health Foundation
-</div>
-
-</article>
 
 
 
 <!-- REPORTING -->
 
-<article class="card resource-card"
-data-category="reporting"
-data-search="report child abuse San Diego child protective services reporting mandated reporter">
-
-<span class="tag">Reporting</span>
-
-<h3>Reporting Child Abuse — San Diego County</h3>
-
-<p>
-Child abuse and neglect reporting information for providers located in
-San Diego County.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.sandiegocounty.gov/content/sdc/hhsa/programs/cs.html"
 target="_blank"
-rel="noopener">
-View reporting information →
-</a>
+rel="noopener"
+data-search="report child abuse San Diego County mandated reporter child protective services">
+
+<h2>Reporting Child Abuse — San Diego County</h2>
+
+<p>
+Child abuse and neglect reporting information for providers located
+in San Diego County.
 </p>
 
-<div class="source">
-Source: County of San Diego
-</div>
+<span class="resource-source">
+County of San Diego
+</span>
 
-</article>
+</a>
 
 
 
 <!-- LEAD -->
 
-<article class="card resource-card"
-data-category="lead"
-data-search="lead poisoning prevention California childcare AB 2370 flyer parents lead">
+<a
+class="resource-card"
+href="https://www.cdss.ca.gov/Portals/9/CCLD/CCP%20Documents/AB%202370%20Lead%20Bill%20Flyer%20-CCLPO2.pdf?ver=2019-01-03-162722-500"
+target="_blank"
+rel="noopener"
+data-search="lead poisoning prevention California childcare AB 2370 lead flyer parents">
 
-<span class="tag">Lead Prevention</span>
-
-<h3>California Child Care Lead Information Flyer</h3>
+<h2>California Child Care Lead Information Flyer</h2>
 
 <p>
 California information regarding lead exposure prevention and child care
 provider responsibilities under AB 2370.
 </p>
 
-<p>
-<a class="more"
-href="https://www.cdss.ca.gov/Portals/9/CCLD/CCP%20Documents/AB%202370%20Lead%20Bill%20Flyer%20-CCLPO2.pdf?ver=2019-01-03-162722-500"
-target="_blank"
-rel="noopener">
-Open lead flyer →
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="lead"
-data-search="lead testing prevention drinking water childcare California CDSS">
-
-<span class="tag">Lead Prevention</span>
-
-<h3>Lead Testing & Prevention Resources</h3>
-
-<p>
-California guidance concerning lead prevention and drinking-water testing
-in licensed Child Care Centers.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/child-care-licensing/water-testing-information"
 target="_blank"
-rel="noopener">
-View California lead resources →
-</a>
-</p>
+rel="noopener"
+data-search="lead testing prevention drinking water childcare California CDSS">
 
-<div class="source">
-Source: CDSS / Child Care Licensing
-</div>
-
-</article>
-
-
-
-<article class="card resource-card"
-data-category="lead"
-data-search="certified drinking water testing laboratory lead water EPA laboratory">
-
-<span class="tag">Lead Prevention</span>
-
-<h3>Certified Drinking Water Laboratories</h3>
+<h2>Lead Testing & Prevention Resources</h2>
 
 <p>
-EPA information for locating state certification programs and laboratories
+California guidance on lead prevention and drinking-water testing
+for licensed Child Care Centers.
+</p>
+
+<span class="resource-source">
+CDSS / Child Care Licensing
+</span>
+
+</a>
+
+
+
+<a
+class="resource-card"
+href="https://www.epa.gov/dwlabcert/contact-information-certification-programs-and-certified-laboratories-drinking-water"
+target="_blank"
+rel="noopener"
+data-search="certified water testing laboratories lead drinking water EPA">
+
+<h2>Certified Drinking Water Laboratories</h2>
+
+<p>
+Information for locating state certification programs and laboratories
 qualified to test drinking water.
 </p>
 
-<p>
-<a class="more"
-href="https://www.epa.gov/dwlabcert/contact-information-certification-programs-and-certified-laboratories-drinking-water"
-target="_blank"
-rel="noopener">
-Find certified laboratories →
+<span class="resource-source">
+U.S. Environmental Protection Agency
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: U.S. Environmental Protection Agency
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="lead"
-data-search="California lead certified contractors CDPH lead related construction professionals">
-
-<span class="tag">Lead Prevention</span>
-
-<h3>California Lead-Certified Professionals</h3>
-
-<p>
-Search California's list of certified lead-related construction professionals
-and contractors.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdph.ca.gov/Programs/CCDPHP/DEODC/CLPPB/Pages/LRCcertlist.aspx"
 target="_blank"
-rel="noopener">
-Search certified professionals →
+rel="noopener"
+data-search="California lead certified contractors construction professionals CDPH">
+
+<h2>California Lead-Certified Professionals</h2>
+
+<p>
+Search California's list of certified lead-related construction
+professionals and contractors.
+</p>
+
+<span class="resource-source">
+California Department of Public Health
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Public Health
-</div>
-
-</article>
 
 
 
-<!-- QUALITY -->
+<!-- QUALITY & PROGRAM DEVELOPMENT -->
 
-<article class="card resource-card"
-data-category="quality"
-data-search="CCHP health safety policies checklist childcare California quality policies UCSF">
-
-<span class="tag">Quality & Accreditation</span>
-
-<h3>CCHP Health & Safety Policies Checklist</h3>
-
-<p>
-Checklist for reviewing health and safety policies in early care and
-education programs.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://cchp.ucsf.edu/content/cchp-health-and-safety-policies-checklist"
 target="_blank"
-rel="noopener">
-Open checklist →
+rel="noopener"
+data-search="CCHP health safety policies checklist child care UCSF">
+
+<h2>CCHP Health & Safety Policies Checklist</h2>
+
+<p>
+Checklist for reviewing health and safety policies in early care
+and education programs.
+</p>
+
+<span class="resource-source">
+California Childcare Health Program / UCSF
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Childcare Health Program / UCSF
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="quality"
-data-search="CCHP health safety checklist childcare accreditation rating quality UCSF">
-
-<span class="tag">Quality & Accreditation</span>
-
-<h3>CCHP Health & Safety Checklist</h3>
-
-<p>
-Detailed checklist for evaluating health and safety practices in child care
-and early education environments.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://cchp.ucsf.edu/resources/forms-policies-and-checklists/cchp-health-and-safety-checklist"
 target="_blank"
-rel="noopener">
-Open checklist →
-</a>
-</p>
+rel="noopener"
+data-search="CCHP health safety checklist child care accreditation quality UCSF">
 
-<div class="source">
-Source: California Childcare Health Program / UCSF
-</div>
-
-</article>
-
-
-
-<article class="card resource-card"
-data-category="quality"
-data-search="FDCRS family day care rating scale score sheet">
-
-<span class="tag">Quality & Accreditation</span>
-
-<h3>Family Day Care Rating Scale — Score Sheet</h3>
+<h2>CCHP Health & Safety Checklist</h2>
 
 <p>
-Family Day Care Rating Scale resource for reviewing and evaluating
+Detailed checklist for evaluating health and safety practices in
+child care and early education environments.
+</p>
+
+<span class="resource-source">
+California Childcare Health Program / UCSF
+</span>
+
+</a>
+
+
+
+<a
+class="resource-card"
+href="https://www.amerimedcpr.com/wp-content/uploads/FDCRS-score-sheet.pdf"
+target="_blank"
+rel="noopener"
+data-search="FDCRS family day care rating scale score sheet quality">
+
+<h2>Family Day Care Rating Scale — Score Sheet</h2>
+
+<p>
+Rating-scale resource for reviewing and evaluating family child care
 program quality.
 </p>
 
-<p>
-<a class="more"
-href="https://www.amerimedcpr.com/wp-content/uploads/FDCRS-score-sheet.pdf"
-target="_blank"
-rel="noopener">
-Open FDCRS score sheet →
+<span class="resource-source">
+Hosted by Amerimed CPR
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Hosted by: Amerimed CPR
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="quality"
-data-search="ITERS infant toddler environment rating scale score sheet childcare quality">
-
-<span class="tag">Quality & Accreditation</span>
-
-<h3>Infant/Toddler Environment Rating Scale</h3>
-
-<p>
-ITERS-R scoring resource for reviewing the quality of infant and toddler
-early learning environments.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.amerimedcpr.com/wp-content/uploads/ITERS-R.pdf"
 target="_blank"
-rel="noopener">
-Open ITERS-R resource →
+rel="noopener"
+data-search="ITERS infant toddler environment rating scale childcare quality">
+
+<h2>Infant/Toddler Environment Rating Scale</h2>
+
+<p>
+ITERS-R scoring resource for reviewing infant and toddler
+early-learning environments.
+</p>
+
+<span class="resource-source">
+Hosted by Amerimed CPR
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Hosted by: Amerimed CPR
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="quality"
-data-search="ECERS early childhood environment rating scale preschool quality score sheet">
-
-<span class="tag">Quality & Accreditation</span>
-
-<h3>Early Childhood Environment Rating Scale</h3>
-
-<p>
-ECERS-R score sheet for reviewing early childhood classroom and
-program environments.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.amerimedcpr.com/wp-content/uploads/ECERS-R-Score-Sheet.pdf"
 target="_blank"
-rel="noopener">
-Open ECERS-R score sheet →
-</a>
+rel="noopener"
+data-search="ECERS early childhood environment rating scale preschool quality">
+
+<h2>Early Childhood Environment Rating Scale</h2>
+
+<p>
+ECERS-R scoring resource for reviewing early childhood classroom
+and program environments.
 </p>
 
-<div class="source">
-Hosted by: Amerimed CPR
-</div>
+<span class="resource-source">
+Hosted by Amerimed CPR
+</span>
 
-</article>
+</a>
 
 
 
-<article class="card resource-card"
-data-category="quality"
-data-search="cultural awareness self assessment childcare early education diversity">
+<a
+class="resource-card"
+href="https://www.amerimedcpr.com/wp-content/uploads/CULTURAL-AWARENESS-SELF-ASSESSMENT-2019.pdf"
+target="_blank"
+rel="noopener"
+data-search="cultural awareness self assessment childcare diversity early education">
 
-<span class="tag">Quality & Accreditation</span>
-
-<h3>Cultural Awareness Self-Assessment</h3>
+<h2>Cultural Awareness Self-Assessment</h2>
 
 <p>
 Self-assessment resource for examining cultural awareness and responsive
-practice in child care and early education settings.
+practice in child care settings.
 </p>
 
-<p>
-<a class="more"
-href="https://www.amerimedcpr.com/wp-content/uploads/CULTURAL-AWARENESS-SELF-ASSESSMENT-2019.pdf"
-target="_blank"
-rel="noopener">
-Open self-assessment →
+<span class="resource-source">
+Hosted by Amerimed CPR
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Hosted by: Amerimed CPR
-</div>
-
-</article>
 
 
 
 <!-- NUTRITION -->
 
-<article class="card resource-card"
-data-category="nutrition"
-data-search="CACFP California application child adult care food program childcare meals">
-
-<span class="tag">Nutrition</span>
-
-<h3>California CACFP Application</h3>
-
-<p>
-Information for applying to participate in the Child and Adult Care Food Program
-in California.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/cacfp/apply"
 target="_blank"
-rel="noopener">
-View application information →
+rel="noopener"
+data-search="CACFP California application child adult care food program childcare meals">
+
+<h2>California CACFP Application</h2>
+
+<p>
+Application information for participation in the Child and Adult Care
+Food Program in California.
+</p>
+
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="nutrition"
-data-search="CACFP reimbursement rates USDA childcare meals food program">
-
-<span class="tag">Nutrition</span>
-
-<h3>CACFP Reimbursement Rates</h3>
-
-<p>
-Current federal reimbursement rates for qualifying meals and snacks served
-through the Child and Adult Care Food Program.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.fns.usda.gov/cacfp/reimbursement-rates"
 target="_blank"
-rel="noopener">
-View reimbursement rates →
-</a>
+rel="noopener"
+data-search="CACFP reimbursement rates USDA child care meals snacks">
+
+<h2>CACFP Reimbursement Rates</h2>
+
+<p>
+Current federal reimbursement rates for qualifying meals and snacks
+served through CACFP.
 </p>
 
-<div class="source">
-Source: U.S. Department of Agriculture
-</div>
+<span class="resource-source">
+U.S. Department of Agriculture
+</span>
 
-</article>
+</a>
 
 
 
-<article class="card resource-card"
-data-category="nutrition"
-data-search="CACFP handbooks childcare food program USDA nutrition">
+<a
+class="resource-card"
+href="https://www.fns.usda.gov/cacfp/handbooks"
+target="_blank"
+rel="noopener"
+data-search="CACFP handbooks USDA childcare food program nutrition">
 
-<span class="tag">Nutrition</span>
-
-<h3>CACFP Handbooks</h3>
+<h2>CACFP Handbooks</h2>
 
 <p>
 USDA handbooks and operational guidance for organizations participating
 in the Child and Adult Care Food Program.
 </p>
 
-<p>
-<a class="more"
-href="https://www.fns.usda.gov/cacfp/handbooks"
-target="_blank"
-rel="noopener">
-View CACFP handbooks →
+<span class="resource-source">
+U.S. Department of Agriculture
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: U.S. Department of Agriculture
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="nutrition"
-data-search="CACFP menu planning guide childcare meals nutrition menu">
-
-<span class="tag">Nutrition</span>
-
-<h3>CACFP Menu Planning Guide</h3>
-
-<p>
-Practical menu-planning resource for programs participating in CACFP.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://tools.johnstalkerinstitute.org/masscamps/cacfp-menu-planning.pdf"
 target="_blank"
-rel="noopener">
-Open menu planning guide →
-</a>
+rel="noopener"
+data-search="CACFP menu planning guide child care nutrition meals">
+
+<h2>CACFP Menu Planning Guide</h2>
+
+<p>
+Menu-planning guidance for programs participating in the Child and
+Adult Care Food Program.
 </p>
 
-<div class="source">
-Source: John C. Stalker Institute
-</div>
+<span class="resource-source">
+John C. Stalker Institute
+</span>
 
-</article>
+</a>
 
 
 
 <!-- INFANT SAFETY -->
 
-<article class="card resource-card"
-data-category="infant"
-data-search="All Babies Cry infant crying shaken baby syndrome child abuse prevention ABCMA">
-
-<span class="tag">Infant Safety</span>
-
-<h3>All Babies Cry</h3>
-
-<p>
-Infant crying and caregiver education program addressing normal infant crying,
-caregiver stress and safe responses.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="http://www.allbabiescry.com/"
 target="_blank"
-rel="noopener">
-Open All Babies Cry →
-</a>
+rel="noopener"
+data-search="All Babies Cry infant crying caregiver shaken baby syndrome ABCMA">
+
+<h2>All Babies Cry</h2>
+
+<p>
+Education regarding infant crying, caregiver stress and safe responses
+to normal infant crying.
 </p>
 
-<p class="resource-note">
+<span class="resource-note">
 Access code: <strong>ABCMA</strong>
-</p>
+</span>
 
-<div class="source">
+<span class="resource-source">
 All Babies Cry
-</div>
+</span>
 
-</article>
+</a>
 
 
 
-<article class="card resource-card"
-data-category="infant"
-data-search="SIDS SUID sudden infant death syndrome safe sleep CDC infant childcare">
-
-<span class="tag">Infant Safety</span>
-
-<h3>SIDS / SUID Information</h3>
-
-<p>
-CDC information on Sudden Infant Death Syndrome, Sudden Unexpected Infant Death
-and reducing sleep-related infant risks.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdc.gov/sudden-infant-death/"
 target="_blank"
-rel="noopener">
-View CDC information →
+rel="noopener"
+data-search="SIDS SUID sudden infant death syndrome safe sleep CDC">
+
+<h2>SIDS / SUID Information</h2>
+
+<p>
+CDC information on Sudden Infant Death Syndrome, Sudden Unexpected
+Infant Death and reducing sleep-related risks.
+</p>
+
+<span class="resource-source">
+Centers for Disease Control and Prevention
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: Centers for Disease Control and Prevention
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="infant"
-data-search="safe sleep childcare California infant sleep CDSS">
-
-<span class="tag">Infant Safety</span>
-
-<h3>Safe Sleep in Child Care</h3>
-
-<p>
-California Child Care Licensing information concerning safe sleep practices
-and requirements for infants in licensed care.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/child-care-licensing/public-information-and-resources/safe-sleep"
 target="_blank"
-rel="noopener">
-View safe sleep resources →
-</a>
+rel="noopener"
+data-search="safe sleep child care California infant sleep CDSS">
+
+<h2>Safe Sleep in Child Care</h2>
+
+<p>
+California Child Care Licensing information regarding safe sleep
+practices and requirements for infants in licensed care.
 </p>
 
-<div class="source">
-Source: CDSS / Child Care Licensing
-</div>
+<span class="resource-source">
+CDSS / Child Care Licensing
+</span>
 
-</article>
+</a>
 
 
 
 <!-- EMERGENCY PREPAREDNESS -->
 
-<article class="card resource-card"
-data-category="emergency"
-data-search="childcare disaster preparedness plan CCHP UCSF emergency earthquake fire">
+<a
+class="resource-card"
+href="https://cchp.ucsf.edu/resources/disaster-preparedness"
+target="_blank"
+rel="noopener"
+data-search="CCHP disaster preparedness child care emergency plan earthquake fire UCSF">
 
-<span class="tag">Emergency Preparedness</span>
-
-<h3>CCHP Disaster Preparedness Resources</h3>
+<h2>CCHP Disaster Preparedness Resources</h2>
 
 <p>
 Emergency and disaster-preparedness resources developed for child care
 and early education programs.
 </p>
 
-<p>
-<a class="more"
-href="https://cchp.ucsf.edu/resources/disaster-preparedness"
-target="_blank"
-rel="noopener">
-View disaster planning resources →
+<span class="resource-source">
+California Childcare Health Program / UCSF
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Childcare Health Program / UCSF
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="emergency"
-data-search="California childcare disaster resources emergency preparedness CDSS">
+<a
+class="resource-card"
+href="https://www.cdss.ca.gov/inforesources/child-care-licensing/resources-for-providers/disaster-resources"
+target="_blank"
+rel="noopener"
+data-search="California child care disaster resources emergency preparedness CDSS">
 
-<span class="tag">Emergency Preparedness</span>
-
-<h3>California Child Care Disaster Resources</h3>
+<h2>California Child Care Disaster Resources</h2>
 
 <p>
 Official California emergency-preparedness and disaster information
 for licensed child care providers.
 </p>
 
-<p>
-<a class="more"
-href="https://www.cdss.ca.gov/inforesources/child-care-licensing/resources-for-providers/disaster-resources"
-target="_blank"
-rel="noopener">
-View disaster resources →
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
-<!-- UPDATES -->
+<!-- PROVIDER UPDATES -->
 
-<article class="card resource-card"
-data-category="updates"
-data-search="Provider Information Notices PIN child care licensing California updates CCLD">
-
-<span class="tag">Updates</span>
-
-<h3>Provider Information Notices (PINs)</h3>
-
-<p>
-Current California Child Care Licensing notices concerning regulations,
-policy, implementation and provider requirements.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/community-care-licensing/policy/provider-information-notices/child-care"
 target="_blank"
-rel="noopener">
-View current PINs →
+rel="noopener"
+data-search="Provider Information Notices PIN childcare licensing California updates CCLD">
+
+<h2>Provider Information Notices (PINs)</h2>
+
+<p>
+Current Child Care Licensing notices concerning regulations, policy,
+implementation and provider requirements.
+</p>
+
+<span class="resource-source">
+CDSS / Community Care Licensing
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: CDSS / Community Care Licensing
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="updates"
-data-search="subscribe provider information notices PIN email California childcare licensing">
-
-<span class="tag">Updates</span>
-
-<h3>Subscribe to Provider Information Notices</h3>
-
-<p>
-Sign up to receive Community Care Licensing updates and Provider Information
-Notices directly from CDSS.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/community-care-licensing/subscribe"
 target="_blank"
-rel="noopener">
-Subscribe to updates →
+rel="noopener"
+data-search="subscribe provider information notices PIN email California childcare licensing">
+
+<h2>Subscribe to Provider Information Notices</h2>
+
+<p>
+Receive Community Care Licensing updates and Provider Information Notices
+directly from CDSS.
+</p>
+
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
-<!-- SUPPORT -->
+<!-- PROVIDER SUPPORT -->
 
-<article class="card resource-card"
-data-category="support"
-data-search="California childcare resources providers technical assistance financial disaster support CDSS">
-
-<span class="tag">Provider Support</span>
-
-<h3>CDSS Resources for Child Care Providers</h3>
-
-<p>
-California provider resources covering licensing, technical assistance,
-training, disaster support and other operational topics.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://www.cdss.ca.gov/inforesources/child-care-licensing/resources-for-providers"
 target="_blank"
-rel="noopener">
-View provider resources →
+rel="noopener"
+data-search="CDSS resources providers childcare technical assistance support licensing">
+
+<h2>CDSS Resources for Child Care Providers</h2>
+
+<p>
+California resources covering licensing, training, technical assistance,
+disaster support and provider operations.
+</p>
+
+<span class="resource-source">
+California Department of Social Services
+</span>
+
 </a>
-</p>
-
-<div class="source">
-Source: California Department of Social Services
-</div>
-
-</article>
 
 
 
-<article class="card resource-card"
-data-category="support"
-data-search="California Child Care Resource Referral Network R&R local agency provider assistance">
-
-<span class="tag">Provider Support</span>
-
-<h3>California Child Care Resource & Referral Network</h3>
-
-<p>
-Find local Resource & Referral agencies that provide information,
-training and support to child care providers and families.
-</p>
-
-<p>
-<a class="more"
+<a
+class="resource-card"
 href="https://rrnetwork.org/"
 target="_blank"
-rel="noopener">
-Find your local agency →
-</a>
+rel="noopener"
+data-search="California Child Care Resource Referral Network R&R provider support">
+
+<h2>California Child Care Resource & Referral Network</h2>
+
+<p>
+Find local Resource & Referral agencies providing information,
+training and support to providers and families.
 </p>
 
-<div class="source">
-Source: California Child Care Resource & Referral Network
+<span class="resource-source">
+California Child Care Resource & Referral Network
+</span>
+
+</a>
+
+
+
 </div>
 
-</article>
 
+<p class="library-disclaimer">
 
-
-</div>
-
-
-<p class="disclaimer" style="margin-top:28px">
-
-CA Childcare Resources provides direct links to government agencies,
-public-health organizations and other recognized child care resources whenever possible.
-External websites, forms and requirements may be updated without notice.
-Always verify current licensing requirements with the appropriate California agency.
+CA Childcare Resources links directly to government agencies,
+public-health organizations and recognized child care resources whenever possible.
+External websites, forms and requirements may change.
+Verify current licensing requirements with the appropriate California agency.
 
 </p>
 
@@ -1431,124 +1388,176 @@ Always verify current licensing requirements with the appropriate California age
 
 <footer>
 
-  <div class="container">
+<div class="container">
 
-    <div class="footer-grid">
+  <div class="footer-grid">
 
+    <div>
 
-      <div>
+      <a class="brand" href="/" style="color:#fff">
 
-        <a class="brand" href="/" style="color:#fff">
+        <span class="brand-mark"></span>
 
-          <span class="brand-mark"></span>
+        <span>CA Childcare Resources</span>
 
-          <span>CA Childcare Resources</span>
+      </a>
 
-        </a>
-
-        <p style="max-width:420px">
-
-          California child care licensing, training, forms, health and safety guidance,
-          and provider resources organized in one place.
-
-        </p>
-
-      </div>
-
-
-
-      <div>
-
-        <h3>Get Started</h3>
-
-        <a href="/start-here.html">
-          Licensing Roadmap
-        </a>
-
-        <a href="/training.html">
-          Training Requirements
-        </a>
-
-        <a href="/resources.html">
-          Resource Library
-        </a>
-
-      </div>
-
-
-
-      <div>
-
-        <h3>Training Resources</h3>
-
-        <a
-          href="https://www.acutepreventivehealth.com/"
-          target="_blank"
-          rel="noopener">
-          Acute Preventive Health
-        </a>
-
-        <a
-          href="https://www.capreventivehealthandsafety.com/"
-          target="_blank"
-          rel="noopener">
-          CA Preventive Health & Safety
-        </a>
-
-      </div>
-
-
-
-      <div>
-
-        <h3>Official California Resources</h3>
-
-        <a
-          href="https://www.cdss.ca.gov/inforesources/child-care-licensing"
-          target="_blank"
-          rel="noopener">
-          Community Care Licensing
-        </a>
-
-        <a
-          href="https://emsa.ca.gov/childcare_provider/"
-          target="_blank"
-          rel="noopener">
-          California EMSA
-        </a>
-
-      </div>
-
+      <p style="max-width:420px">
+        California child care licensing, training, forms, health and safety
+        guidance, and provider resources organized in one place.
+      </p>
 
     </div>
 
 
+    <div>
 
-    <div class="footer-bottom">
+      <h3>Get Started</h3>
 
-      <p>
-        © <span data-year></span> CA Childcare Resources.
-        Independent educational resource. Not a government agency.
-      </p>
+      <a href="/start-here.html">Licensing Roadmap</a>
 
-      <p class="disclaimer">
+      <a href="/training.html">Training Requirements</a>
 
-        Licensing and training requirements may vary by facility type
-        and may change. Verify current requirements with the California
-        Department of Social Services, Community Care Licensing Division,
-        California EMSA and your local licensing office.
+      <a href="/resources.html">Resource Library</a>
 
-      </p>
+    </div>
+
+
+    <div>
+
+      <h3>Training Resources</h3>
+
+      <a
+        href="https://www.acutepreventivehealth.com/"
+        target="_blank"
+        rel="noopener">
+        Acute Preventive Health
+      </a>
+
+      <a
+        href="https://www.capreventivehealthandsafety.com/"
+        target="_blank"
+        rel="noopener">
+        CA Preventive Health & Safety
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h3>Official California Resources</h3>
+
+      <a
+        href="https://www.cdss.ca.gov/inforesources/child-care-licensing"
+        target="_blank"
+        rel="noopener">
+        Community Care Licensing
+      </a>
+
+      <a
+        href="https://emsa.ca.gov/childcare_provider/"
+        target="_blank"
+        rel="noopener">
+        California EMSA
+      </a>
 
     </div>
 
   </div>
 
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-year></span> CA Childcare Resources.
+      Independent educational resource. Not a government agency.
+    </p>
+
+    <p class="disclaimer">
+      Licensing and training requirements may vary by facility type
+      and may change. Verify current requirements with the California
+      Department of Social Services, Community Care Licensing Division,
+      California EMSA and your local licensing office.
+    </p>
+
+  </div>
+
+</div>
+
 </footer>
+
 
 
 <script src="/assets/app.js"></script>
 
-</body>
 
+<script>
+
+/* =========================================================
+   RESOURCE LIBRARY SEARCH
+   ========================================================= */
+
+(function () {
+
+  const input = document.getElementById("resourceSearch");
+  const cards = Array.from(document.querySelectorAll(".resource-card"));
+  const count = document.getElementById("resourceCount");
+
+  function updateResources() {
+
+    const query = input.value
+      .toLowerCase()
+      .trim();
+
+    let visible = 0;
+
+    cards.forEach(function (card) {
+
+      const searchableText = (
+        (card.dataset.search || "") +
+        " " +
+        card.innerText
+      ).toLowerCase();
+
+      const matches =
+        query === "" ||
+        searchableText.includes(query);
+
+      card.hidden = !matches;
+
+      if (matches) {
+        visible++;
+      }
+
+    });
+
+
+    if (query === "") {
+
+      count.textContent =
+        cards.length +
+        " resources available";
+
+    } else {
+
+      count.textContent =
+        visible +
+        (visible === 1 ? " resource found" : " resources found");
+
+    }
+
+  }
+
+
+  input.addEventListener("input", updateResources);
+
+  updateResources();
+
+})();
+
+</script>
+
+
+</body>
 </html>
